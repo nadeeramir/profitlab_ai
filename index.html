@@ -116,8 +116,8 @@ const oldRender=render;render=function(){oldRender();ensureCatalog()};ensureCata
 // PUBLIC client configuration. Replace only the publishable key below before deployment.
 // NEVER insert a service_role, secret key, or database password in this file.
 const PUBLIC_SUPABASE_URL = 'https://kpggqtxzhxqtpygbfzmm.supabase.co';
-sb_publishable_Blag7RKzjeYvzelJqtEOYA_wjMvClMvlet sb=null, currentUser=null, businessIds=[];
-const el=id=>document.getElementById(id);
+const PUBLIC_SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_Blag7RKzjeYvzelJqtEOYA_wjMvClMv';
+let sb=null, currentUser=null, businessIds=[];const el=id=>document.getElementById(id);
 const message=(id,msg,ok=false)=>{el(id).textContent=msg;el(id).className=ok?'success':'muted'};
 function safeError(e){return e?.message||String(e)}
 function validSettings(){const url=el('sburl').value.trim(),key=el('sbkey').value.trim();if(!/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(url))throw Error('Enter a valid Supabase Project URL.');if(!/^(sb_publishable_|eyJ)/.test(key))throw Error('Use only the publishable/anon key.');return {url:url.replace(/\/$/,''),key}}
